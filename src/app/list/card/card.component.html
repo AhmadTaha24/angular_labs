@@ -20,7 +20,7 @@
     <ng-template #elseBlock><span style="color:rgb(173, 48, 48)">Out of stock</span></ng-template>
     <mat-card-actions>
       <button mat-button (click)="redirectToDetails()">INFO</button>
-      <button mat-button (click)="redirectToCart()" *ngIf="product.stock!==0">ADD TO CARD</button>
+      <button mat-button (click)="redirectToCart();increaseProduct()" *ngIf="product.stock!==0">ADD TO CARD</button>
 
     </mat-card-actions>
   </mat-card>

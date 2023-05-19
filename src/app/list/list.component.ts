@@ -13,8 +13,5 @@ import { Product } from './product';
 export class ListComponent {
   products: Product[]= data;
   test: Product = this.products[29];
-  ngOnInit() {
-    console.log(this.products);
 
-  }
 }
