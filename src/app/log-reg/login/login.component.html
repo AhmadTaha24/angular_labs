@@ -1,0 +1,30 @@
+
+
+<mat-card>
+    <mat-card-header>
+        <h3>Login</h3>
+    </mat-card-header>
+   
+        <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)">
+            <mat-card-content>
+            <input required #email="ngModel" ngModel name="email" type="text" placeholder="Email"
+             pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
+            <div>
+                <span *ngIf="email.touched && email.errors" class="form-text text-danger">Enter valid Email</span>
+            </div>
+
+            <br>
+            <input required #pass="ngModel" minlength="3" ngModel name="pass" type="password" placeholder="Password">
+            <div>
+                <span *ngIf="pass.touched && pass.errors" class="form-text text-danger">Please enter a password</span>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" >Submit</button>
+           
+      
+          </mat-card-actions>
+        </form>
+    
+    
+</mat-card>

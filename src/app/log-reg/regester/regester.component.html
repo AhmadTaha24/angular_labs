@@ -1,0 +1,24 @@
+<form [formGroup]="regesterForm" (ngSubmit)="regesterSubmit()">
+    <input type="text" name="name" placeholder="name" formControlName="name" id="">
+    <br>
+    <div><span class="form-text text-danger ng-star-inserted"
+        *ngIf="regesterForm.controls['name'].touched && regesterForm.controls['name'].invalid">Please enter your name</span></div>
+        <br>
+
+    <input type="email" name="email" formControlName="email" placeholder="email" id="">
+    <br>
+    <div><span class="form-text text-danger ng-star-inserted"
+         *ngIf="regesterForm.controls['email'].touched && regesterForm.controls['email'].invalid">Please enter valid Email</span></div>
+         <br>
+
+    <input type="text" name="username"  placeholder="username" formControlName="username" id="">
+    <br>
+    <div><span class="form-text text-danger ng-star-inserted"
+        *ngIf="regesterForm.controls['username'].touched && regesterForm.controls['username'].invalid">Please enter valid username</span></div>
+        <br>
+    <input type="password" name="password" formControlName="password" placeholder="password" id="">
+    <br>
+    <div><span class="form-text text-danger ng-star-inserted"
+        *ngIf="regesterForm.controls['password'].touched && regesterForm.controls['password'].invalid">Please enter valid password</span></div>
+    <input type="password" name="confirm" placeholder="confirm password" id="">
+</form>

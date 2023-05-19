@@ -1,0 +1,12 @@
+
+
+
+<div id="parent">
+    <p>Name: {{product.title}}</p>
+    <img [src]="product.thumbnail" alt="">
+    <p>Description: {{product.description}}</p>
+    <p>Category: {{product.category}}</p>
+    <p>{{product.brand}}</p>
+    <p>Rating: {{product.rating}}/10</p>
+    <p *ngIf="product.discountPercentage">Discount: {{product.discountPercentage}}%</p>
+</div>

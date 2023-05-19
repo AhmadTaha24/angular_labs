@@ -1,0 +1,15 @@
+<p>cart works!</p>
+<button class="btn btn-success" (click)="increaseCounter()"> add</button>
+<span>{{counter}}</span>
+<button class="btn btn-danger" (click)="decreaseCounter()"> reduce</button>
+
+
+<br>
+<br>
+<ul class="list-group list-group-flush">
+  <app-cart-info (productEvent)="receiveProduct($event)"></app-cart-info>
+  </ul>
+
+  <table>
+    
+  </table>

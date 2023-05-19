@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{product.title}}</mat-card-title>
+      <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+    </mat-card-header>
+    <img id="img" mat-card-image [src]="product.thumbnail" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+       {{product.description.substr(0,50)}}....
+      </p>
+      <P>{{product.createdAt| date : 'MMMM YYYY'}}</P>
+      <p>Price: <b>{{product.price|egp}}</b></p>
+
+    <div id="stock" *ngIf="product.stock!==0; then thenBlock else elseBlock">
+
+    </div>
+    </mat-card-content>
+    
+    <ng-template #thenBlock><span style="color:rgb(149, 204, 65)">In stock</span></ng-template>
+    <ng-template #elseBlock><span style="color:rgb(173, 48, 48)">Out of stock</span></ng-template>
+    <mat-card-actions>
+      <button mat-button (click)="redirectToDetails()">INFO</button>
+      <button mat-button (click)="redirectToCart()" *ngIf="product.stock!==0">ADD TO CARD</button>
+
+    </mat-card-actions>
+  </mat-card>
